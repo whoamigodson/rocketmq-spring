@@ -36,6 +36,8 @@ public class RocketMQProperties {
 
     private Producer producer;
 
+    private Consumer consumer;
+
     public String getNameServer() {
         return nameServer;
     }
@@ -58,6 +60,14 @@ public class RocketMQProperties {
 
     public void setProducer(RocketMQProperties.Producer producer) {
         this.producer = producer;
+    }
+
+    public Consumer getConsumer() {
+        return consumer;
+    }
+
+    public void setConsumer(Consumer consumer) {
+        this.consumer = consumer;
     }
 
     public static class Producer {
@@ -205,6 +215,19 @@ public class RocketMQProperties {
 
         public void setCustomizedTraceTopic(String customizedTraceTopic) {
             this.customizedTraceTopic = customizedTraceTopic;
+        }
+    }
+
+    public static class Consumer {
+
+        private String instance = "1";
+
+        public String getInstance() {
+            return instance;
+        }
+
+        public void setInstance(String instance) {
+            this.instance = instance;
         }
     }
 }
